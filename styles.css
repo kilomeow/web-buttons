@@ -1,0 +1,26 @@
+body {
+    color: white;
+    font-size: 18pt;
+    font-family: sans-serif;
+    font-weight: 200;
+}
+
+#panel {
+    max-width: 40rem;
+    margin:  auto;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: darkslategray;
+    border: dashed 0.2rem white;
+    
+    display: inline-flex;
+    padding: 1em;
+    margin: 1em;
+}
+
+.button:active {
+    background-color: darksalmon;
+}
