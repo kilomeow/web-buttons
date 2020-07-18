@@ -5,22 +5,63 @@ body {
     font-weight: 200;
 }
 
+/* disable selection */
+
 #panel {
-    max-width: 40rem;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+} 
+
+#panel {
+    max-width: 25rem;
     margin:  auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 .button {
     background-color: darkslategray;
-    border: dashed 0.2rem white;
+    border: dashed 0.1rem white;
     
     display: inline-flex;
     padding: 1em;
     margin: 1em;
 }
 
-.button:active {
+.button {
+    transition: all 0.1s;
+}
+
+.toggle {
+    border: double 0.4rem white;
+}
+
+.toggle.active {
     background-color: darksalmon;
+}
+
+.hold:active {
+    background-color: darksalmon;
+}
+
+
+.button:active {
+  animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  25%, 75% {
+    transform: translate3d(0, -2px, 0);
+  }
+  
+  50% {
+    transform: translate3d(0, 2px, 0);
+  }
 }
